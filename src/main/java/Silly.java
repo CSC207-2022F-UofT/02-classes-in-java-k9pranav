@@ -59,6 +59,7 @@ public class Silly implements Comparable<Silly>{
      * @param name the name of this Silly instance.
      */
     public Silly(String name) {
+
         this.name = name;
     }
 
@@ -79,6 +80,9 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
+
+    /** The method below takes in 2 strings: first and second.
+     * Returns the concatenation of it.  */
     
     public Silly(String first, String second){
         this.name = first + second;
@@ -136,7 +140,7 @@ public class Silly implements Comparable<Silly>{
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
         
-        return this.name
+        return name;
     }
 
     /**
@@ -164,6 +168,8 @@ public class Silly implements Comparable<Silly>{
 
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
+
+        return this.toString().equals(o.toString());
     }
 
     /**
@@ -197,6 +203,17 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        if (this.toString().length() - other.toString().length() > 0){
+            return 1;
+        }
+
+        else if (this.toString().length() - other.toString().length() == 0) {
+            return 0;
+        }
+
+        else {
+            return -1;
+        }
     }
 
     /*
